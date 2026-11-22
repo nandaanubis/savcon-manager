@@ -19,11 +19,15 @@ Aplikasi backup konfigurasi perangkat jaringan berbasis web, dijalankan dengan D
 
 ## Deploy
 ```bash
+# opsional: salin template lalu ubah secret/password
+cp .env.example .env
+
 docker compose up -d --build
 ```
-Akses: `http://172.20.20.43:8111`
+Akses: `http://<ip-server>:8111`
 
 Login default: **admin / admin123** (segera ganti).
+Semua nilai di `.env` bersifat opsional — jika tidak ada, pakai default bawaan. `.env` tidak ikut ter-commit ke Git.
 
 ## Konfigurasi
 Semua pengaturan (SMTP, SFTP, GDrive, cron, background) melalui menu **Settings** di UI.

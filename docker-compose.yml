@@ -8,8 +8,8 @@ services:
     volumes:
       - ./data:/app/data
     environment:
-      - SECRET_KEY=savcon-manager-change-this-secret-2026
-      - DEFAULT_ADMIN_USER=admin
-      - DEFAULT_ADMIN_PASSWORD=admin123
-      - ACCESS_TOKEN_EXPIRE_HOURS=24
-      - TZ=Asia/Jakarta
+      - SECRET_KEY=${SECRET_KEY:-change-this-secret-in-production}
+      - DEFAULT_ADMIN_USER=${DEFAULT_ADMIN_USER:-admin}
+      - DEFAULT_ADMIN_PASSWORD=${DEFAULT_ADMIN_PASSWORD:-admin123}
+      - ACCESS_TOKEN_EXPIRE_HOURS=${ACCESS_TOKEN_EXPIRE_HOURS:-24}
+      - TZ=${TZ:-Asia/Jakarta}
