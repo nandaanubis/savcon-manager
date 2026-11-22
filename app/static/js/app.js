@@ -1,6 +1,6 @@
 /* Savcon Manager - Frontend SPA (vanilla JS, multi-language) */
 const API = '/api';
-const APP = { name: 'Savcon Manager', version: '1.0.0', release: '2026.11.22', author: 'Nanda Anubis' };
+const APP = { name: 'Savcon Manager', version: '1.0.1', release: '2026.11.23', author: 'Nanda Anubis' };
 const QUOTE = 'App ini dibuat secara gabut dan dilahirkan secara suka suka. Mungkin App ini anomaly tapi percaya lah ini berfungsi sebagai mana mestinya - Nanda Anubis & AI POWER';
 const LANGS = [['id','Indonesia'],['en','English'],['es','Español'],['zh','中文'],['pt','Português']];
 

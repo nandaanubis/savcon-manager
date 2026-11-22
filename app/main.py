@@ -35,7 +35,7 @@ async def lifespan(app: FastAPI):
     stop_scheduler()
 
 
-app = FastAPI(title="Savcon Manager", version="1.0.0", lifespan=lifespan)
+app = FastAPI(title="Savcon Manager", version="1.0.1", lifespan=lifespan)
 
 app.include_router(routes.router)
 

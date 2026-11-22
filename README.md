@@ -6,10 +6,10 @@
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.110%2B-009688?logo=fastapi&logoColor=white)
-![Release](https://img.shields.io/badge/Release-v1.0.0-8B5CF6)
+![Release](https://img.shields.io/badge/Release-v1.0.1-8B5CF6)
 ![License](https://img.shields.io/badge/License-Internal-64748B)
 
-**Release:** `v1.0.0` · **Released:** 2026-11-22 · **Author:** [Nanda Anubis](https://github.com/nandaanubis)
+**Release:** `v1.0.1` · **Released:** 2026-11-23 · **Author:** [Nanda Anubis](https://github.com/nandaanubis)
 
 ---
 
