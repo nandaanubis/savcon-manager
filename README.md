@@ -32,6 +32,20 @@
 
 ---
 
+## 📸 Screenshots
+
+| 🔐 Login | 📊 Dashboard |
+|:---:|:---:|
+| ![Login page](docs/screenshots/login.jpeg) | ![Dashboard](docs/screenshots/dashboard.jpeg) |
+
+| ⚙️ Settings |
+|:---:|
+| ![Settings](docs/screenshots/settings.jpeg) |
+
+> 💡 Modern dark glassmorphism UI — responsive, customizable login background, and a clean device overview.
+
+---
+
 ## 🧩 Supported Devices
 
 | Vendor | Protocol | Config command | Version detection |
