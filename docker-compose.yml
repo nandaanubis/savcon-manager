@@ -1,0 +1,15 @@
+services:
+  savcon-manager:
+    build: .
+    container_name: savcon-manager
+    restart: unless-stopped
+    ports:
+      - "8111:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - SECRET_KEY=savcon-manager-change-this-secret-2026
+      - DEFAULT_ADMIN_USER=admin
+      - DEFAULT_ADMIN_PASSWORD=admin123
+      - ACCESS_TOKEN_EXPIRE_HOURS=24
+      - TZ=Asia/Jakarta

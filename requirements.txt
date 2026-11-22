@@ -1,0 +1,9 @@
+fastapi>=0.110,<1
+uvicorn[standard]>=0.27,<1
+python-multipart>=0.0.9
+paramiko>=3.4
+bcrypt>=4.0,<5
+PyJWT>=2.8
+APScheduler>=3.10,<4
+google-api-python-client>=2.100
+google-auth>=2.25
