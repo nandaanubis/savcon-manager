@@ -12,6 +12,8 @@ RUN apt-get update \
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+# Keep build tooling patched (pip/setuptools advisories)
+RUN pip install --no-cache-dir --upgrade pip setuptools
 # Cisco IOS/NX-OS legacy SSH hosts only offer ssh-rsa (SHA-1).
 # Paramiko 4+ removed it, so pin to 3.x for legacy device compatibility.
 RUN pip install --no-cache-dir "paramiko==3.5.0"

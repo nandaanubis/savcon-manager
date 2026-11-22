@@ -105,6 +105,16 @@ Environment variables (all optional, defaults provided):
 
 ---
 
+## 🔒 Security Notes
+
+- 🔑 `SECRET_KEY` is **auto-generated and persisted** to `data/secret.key` when left at its default, so a fresh install never ships with a forgeable JWT signing key.
+- 👤 Non-admin users cannot read SMTP / SFTP / Google Drive credentials — `GET /api/settings` is redacted for them.
+- 🖼️ Only `data/backgrounds` is served publicly (`/media/backgrounds`); the SQLite database and backup files are **not** web-accessible.
+- 🚫 Background changes require admin authentication; login has basic brute-force throttling (5 attempts / 5 min per IP).
+- ⚠️ **Known tradeoff:** Paramiko is pinned to `3.x` so legacy Cisco/NX-OS switches that only offer `ssh-rsa` host keys can still be backed up. This keeps [CVE-2026-44405](https://nvd.nist.gov/vuln/detail/CVE-2026-44405) (SHA-1 host key, CVSS low / adjacent-network) applicable. Upgrade those devices' SSH host keys to RSA-SHA2/Ed25519 before moving to Paramiko 5.x.
+
+---
+
 ## ⏰ Cron Examples
 
 | Expression | Meaning |

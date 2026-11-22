@@ -370,7 +370,7 @@ async function setBg(value) {
   if (!state.user) applyLoginBg();   // never apply login CSS while inside the app
   applyBgPreview();
   document.querySelectorAll('.bg-dot').forEach(e=>e.classList.toggle('active',e.dataset.bg===value));
-  try { await fetch(API+'/public/background',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({value})}); } catch {}
+  try { await api('/settings/background',{method:'PUT',body:JSON.stringify({value})}); } catch(e) { toast(e.message,'err'); }
 }
 
 /* ---------------- app shell ---------------- */
@@ -826,7 +826,7 @@ document.addEventListener('change',async(e)=>{
     const file=e.target.files[0]; if(!file)return;
     const fd=new FormData(); fd.append('file',file);
     try{
-      const r=await fetch(API+'/public/background/upload',{method:'POST',body:fd});
+      const r=await fetch(API+'/settings/background/upload',{method:'POST',headers:state.token?{'Authorization':'Bearer '+state.token}:{},body:fd});
       const raw=await r.text(); let d={};
       try{d=JSON.parse(raw);}catch{}
       if(!r.ok) throw new Error(d.detail || raw.slice(0,120) || 'Upload failed');

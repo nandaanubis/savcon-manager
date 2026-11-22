@@ -1,10 +1,12 @@
 import os
+import threading
+import time
 from pathlib import Path
 
-from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse, PlainTextResponse
 
-from .config import DATA_DIR
+from .config import BACKGROUND_DIR
 from .auth import (
     create_token,
     get_current_user,
@@ -29,6 +31,11 @@ from .services.storage_backends import send_email, send_gdrive, send_sftp
 
 router = APIRouter(prefix="/api")
 
+_login_lock = threading.Lock()
+_login_attempts: dict[str, tuple[int, float]] = {}
+LOGIN_LIMIT = 5
+LOGIN_WINDOW = 300  # seconds
+
 
 # ---------- Public (login background) ----------
 @router.get("/public/background")
@@ -40,8 +47,8 @@ def public_background():
     }
 
 
-@router.post("/public/background")
-def set_public_background(data: dict):
+@router.put("/settings/background")
+def set_background(data: dict, user: dict = Depends(require_admin)):
     save_settings({"login_background": str(data.get("value", "aurora"))})
     return {"message": "ok"}
 
@@ -49,7 +56,7 @@ def set_public_background(data: dict):
 async def _save_background_file(file: UploadFile):
     import time
 
-    upload_dir = DATA_DIR / "backgrounds"
+    upload_dir = BACKGROUND_DIR
     upload_dir.mkdir(parents=True, exist_ok=True)
     ext = Path(file.filename or "").suffix.lower()
     if ext not in (".png", ".jpg", ".jpeg", ".webp", ".gif"):
@@ -72,18 +79,30 @@ async def _save_background_file(file: UploadFile):
     return {"url": url}
 
 
-@router.post("/public/background/upload")
-async def public_upload_background(file: UploadFile = File(...)):
+@router.post("/settings/background/upload")
+async def admin_upload_background(file: UploadFile = File(...), user: dict = Depends(require_admin)):
     return await _save_background_file(file)
 
 
 # ---------- Auth ----------
 @router.post("/auth/login")
-def login(data: LoginIn):
+def login(data: LoginIn, request: Request):
+    ip = request.client.host if request.client else "unknown"
+    now = time.time()
+    with _login_lock:
+        count, reset_at = _login_attempts.get(ip, (0, now + LOGIN_WINDOW))
+        if now > reset_at:
+            count, reset_at = 0, now + LOGIN_WINDOW
+        if count >= LOGIN_LIMIT:
+            raise HTTPException(status_code=429, detail="Terlalu banyak percobaan login. Coba lagi nanti.")
+        _login_attempts[ip] = (count + 1, reset_at)
+
     with db() as conn:
         row = conn.execute("SELECT * FROM users WHERE username=?", (data.username,)).fetchone()
     if not row or not verify_password(data.password, row["password_hash"]):
         raise HTTPException(status_code=401, detail="Username atau password salah")
+    with _login_lock:
+        _login_attempts.pop(ip, None)
     token = create_token(row["username"], row["role"])
     log_action(row["username"], "login", "Successful login")
     return {
@@ -407,7 +426,15 @@ def run_backup(data: BackupRunIn, user: dict = Depends(get_current_user)):
 # ---------- Settings ----------
 @router.get("/settings")
 def get_all_settings(user: dict = Depends(get_current_user)):
-    return get_settings()
+    settings = get_settings()
+    if user.get("role") != "admin":
+        # Non-admin users must never see SMTP / SFTP / GDrive credentials.
+        allowed = {
+            "app_name", "login_background", "login_opacity",
+            "auto_enabled", "auto_cron", "auto_groups",
+        }
+        settings = {k: v for k, v in settings.items() if k in allowed}
+    return settings
 
 
 @router.put("/settings")
@@ -439,11 +466,6 @@ def test_backend(backend: str, user: dict = Depends(require_admin)):
     else:
         raise HTTPException(status_code=400, detail="Backend tidak dikenal")
     return {"result": msg}
-
-
-@router.post("/settings/upload-background")
-async def upload_background(file: UploadFile = File(...), user: dict = Depends(require_admin)):
-    return await _save_background_file(file)
 
 
 # ---------- Dashboard & logs ----------
