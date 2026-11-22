@@ -32,7 +32,7 @@ id:{
  'dev.search':'Cari nama atau IP...','dev.allGroups':'Semua Grup','dev.refresh':'Refresh Status','dev.backupSel':'Backup Terpilih','dev.add':'Tambah Device',
  'dev.col.device':'Device','dev.col.group':'Grup','dev.col.type':'Tipe','dev.col.conn':'Koneksi','dev.col.ver':'Versi OS','dev.col.status':'Status','dev.col.last':'Backup Terakhir','dev.col.act':'Aksi',
  'dev.retention':'retensi: {n} file','dev.noGroup':'Tanpa Grup','dev.empty':'Tidak ada device. Klik Tambah Device untuk mulai.',
- 'dev.test':'Test koneksi','dev.backup':'Backup sekarang','dev.edit':'Edit','dev.delete':'Hapus',
+ 'dev.test':'Test koneksi','dev.backup':'Backup sekarang','dev.duplicate':'Duplikat','dev.duplicateTitle':'Duplikasi Device','dev.edit':'Edit','dev.delete':'Hapus',
  'dev.new':'Tambah Device Baru','dev.editTitle':'Edit Device','dev.general':'Informasi Umum','dev.connSec':'Koneksi & Autentikasi','dev.storeSec':'Backup & Penyimpanan',
  'dev.name':'Nama Device','dev.group':'Grup','dev.host':'Host / IP','dev.port':'Port','dev.type':'Tipe Perangkat','dev.conn':'Metode Akses','dev.user':'Username','dev.pass':'Password','dev.passHint':'kosongkan jika tidak diubah',
  'dev.ret':'Maks. Retention (1-10)','dev.retHint':'Jumlah file backup terakhir yang disimpan','dev.store':'Tujuan Penyimpanan','dev.sensitive':'Sertakan password sensitif (PPP, dll)','dev.sensitiveHint':'/export show-sensitive — membutuhkan policy sensitive di RouterOS',
@@ -72,7 +72,7 @@ en:{
  'dev.search':'Search name or IP...','dev.allGroups':'All Groups','dev.refresh':'Refresh Status','dev.backupSel':'Backup Selected','dev.add':'Add Device',
  'dev.col.device':'Device','dev.col.group':'Group','dev.col.type':'Type','dev.col.conn':'Connection','dev.col.ver':'OS Version','dev.col.status':'Status','dev.col.last':'Last Backup','dev.col.act':'Actions',
  'dev.retention':'retention: {n} files','dev.noGroup':'No Group','dev.empty':'No devices. Click Add Device to start.',
- 'dev.test':'Test connection','dev.backup':'Backup now','dev.edit':'Edit','dev.delete':'Delete',
+ 'dev.test':'Test connection','dev.backup':'Backup now','dev.duplicate':'Duplicate','dev.duplicateTitle':'Duplicate Device','dev.edit':'Edit','dev.delete':'Delete',
  'dev.new':'Add New Device','dev.editTitle':'Edit Device','dev.general':'General Information','dev.connSec':'Connection & Authentication','dev.storeSec':'Backup & Storage',
  'dev.name':'Device Name','dev.group':'Group','dev.host':'Host / IP','dev.port':'Port','dev.type':'Device Type','dev.conn':'Access Method','dev.user':'Username','dev.pass':'Password','dev.passHint':'leave empty to keep current',
  'dev.ret':'Max. Retention (1-10)','dev.retHint':'Number of recent backup files to keep','dev.store':'Storage Target','dev.sensitive':'Include sensitive passwords (PPP, etc)','dev.sensitiveHint':'/export show-sensitive — requires sensitive policy on RouterOS',
@@ -112,7 +112,7 @@ es:{
  'dev.search':'Buscar nombre o IP...','dev.allGroups':'Todos los Grupos','dev.refresh':'Actualizar Estado','dev.backupSel':'Copiar Seleccionados','dev.add':'Añadir Dispositivo',
  'dev.col.device':'Dispositivo','dev.col.group':'Grupo','dev.col.type':'Tipo','dev.col.conn':'Conexión','dev.col.ver':'Versión SO','dev.col.status':'Estado','dev.col.last':'Última Copia','dev.col.act':'Acciones',
  'dev.retention':'retención: {n} archivos','dev.noGroup':'Sin Grupo','dev.empty':'No hay dispositivos. Haga clic en Añadir Dispositivo.',
- 'dev.test':'Probar conexión','dev.backup':'Copiar ahora','dev.edit':'Editar','dev.delete':'Eliminar',
+ 'dev.test':'Probar conexión','dev.backup':'Copiar ahora','dev.duplicate':'Duplicar','dev.duplicateTitle':'Duplicar Dispositivo','dev.edit':'Editar','dev.delete':'Eliminar',
  'dev.new':'Añadir Nuevo Dispositivo','dev.editTitle':'Editar Dispositivo','dev.general':'Información General','dev.connSec':'Conexión y Autenticación','dev.storeSec':'Copia y Almacenamiento',
  'dev.name':'Nombre del Dispositivo','dev.group':'Grupo','dev.host':'Host / IP','dev.port':'Puerto','dev.type':'Tipo de Dispositivo','dev.conn':'Método de Acceso','dev.user':'Usuario','dev.pass':'Contraseña','dev.passHint':'deje vacío para mantener la actual',
  'dev.ret':'Retención máx. (1-10)','dev.retHint':'Número de archivos de copia recientes a conservar','dev.store':'Destino de Almacenamiento','dev.sensitive':'Incluir contraseñas sensibles (PPP, etc.)','dev.sensitiveHint':'/export show-sensitive — requiere política sensitive en RouterOS',
@@ -150,7 +150,7 @@ zh:{
  'dev.search':'搜索名称或 IP...','dev.allGroups':'所有分组','dev.refresh':'刷新状态','dev.backupSel':'备份选中项','dev.add':'添加设备',
  'dev.col.device':'设备','dev.col.group':'分组','dev.col.type':'类型','dev.col.conn':'连接','dev.col.ver':'系统版本','dev.col.status':'状态','dev.col.last':'上次备份','dev.col.act':'操作',
  'dev.retention':'保留：{n} 个文件','dev.noGroup':'无分组','dev.empty':'暂无设备，请点击添加设备。',
- 'dev.test':'测试连接','dev.backup':'立即备份','dev.edit':'编辑','dev.delete':'删除',
+ 'dev.test':'测试连接','dev.backup':'立即备份','dev.duplicate':'复制','dev.duplicateTitle':'复制设备','dev.edit':'编辑','dev.delete':'删除',
  'dev.new':'添加新设备','dev.editTitle':'编辑设备','dev.general':'基本信息','dev.connSec':'连接与认证','dev.storeSec':'备份与存储',
  'dev.name':'设备名称','dev.group':'分组','dev.host':'主机 / IP','dev.port':'端口','dev.type':'设备类型','dev.conn':'访问方式','dev.user':'用户名','dev.pass':'密码','dev.passHint':'留空表示不修改',
  'dev.ret':'最大保留数（1-10）','dev.retHint':'保留的最近备份文件数量','dev.store':'存储目标','dev.sensitive':'包含敏感密码（PPP 等）','dev.sensitiveHint':'/export show-sensitive — 需要 RouterOS 的 sensitive 权限',
@@ -190,7 +190,7 @@ pt:{
  'dev.search':'Buscar nome ou IP...','dev.allGroups':'Todos os Grupos','dev.refresh':'Atualizar Status','dev.backupSel':'Backup Selecionados','dev.add':'Adicionar Dispositivo',
  'dev.col.device':'Dispositivo','dev.col.group':'Grupo','dev.col.type':'Tipo','dev.col.conn':'Conexão','dev.col.ver':'Versão SO','dev.col.status':'Status','dev.col.last':'Último Backup','dev.col.act':'Ações',
  'dev.retention':'retenção: {n} arquivos','dev.noGroup':'Sem Grupo','dev.empty':'Nenhum dispositivo. Clique em Adicionar Dispositivo.',
- 'dev.test':'Testar conexão','dev.backup':'Backup agora','dev.edit':'Editar','dev.delete':'Excluir',
+ 'dev.test':'Testar conexão','dev.backup':'Backup agora','dev.duplicate':'Duplicar','dev.duplicateTitle':'Duplicar Dispositivo','dev.edit':'Editar','dev.delete':'Excluir',
  'dev.new':'Adicionar Novo Dispositivo','dev.editTitle':'Editar Dispositivo','dev.general':'Informações Gerais','dev.connSec':'Conexão e Autenticação','dev.storeSec':'Backup e Armazenamento',
  'dev.name':'Nome do Dispositivo','dev.group':'Grupo','dev.host':'Host / IP','dev.port':'Porta','dev.type':'Tipo de Dispositivo','dev.conn':'Método de Acesso','dev.user':'Usuário','dev.pass':'Senha','dev.passHint':'deixe vazio para manter a atual',
  'dev.ret':'Retenção máx. (1-10)','dev.retHint':'Quantidade de arquivos de backup recentes a manter','dev.store':'Destino de Armazenamento','dev.sensitive':'Incluir senhas sensíveis (PPP, etc.)','dev.sensitiveHint':'/export show-sensitive — requer política sensitive no RouterOS',
@@ -253,6 +253,7 @@ const P = {
   image:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>',
   globe:'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/>',
   info:'<circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>',
+  copy:'<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
 };
 function icon(n, s = 18) {
   return `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${P[n] || P.dashboard}</svg>`;
@@ -497,18 +498,20 @@ function deviceRows() {
     <td><div class="row-actions">
       <button class="icon-act" data-act="test-device" data-id="${d.id}" title="${t('dev.test')}">${icon('plug',15)}</button>
       <button class="icon-act" data-act="backup-device" data-id="${d.id}" title="${t('dev.backup')}">${icon('play',15)}</button>
+      <button class="icon-act" data-act="duplicate-device" data-id="${d.id}" title="${t('dev.duplicate')}">${icon('copy',15)}</button>
       <button class="icon-act" data-act="edit-device" data-id="${d.id}" title="${t('dev.edit')}">${icon('edit',15)}</button>
       <button class="icon-act danger" data-act="delete-device" data-id="${d.id}" title="${t('dev.delete')}">${icon('trash',15)}</button>
     </div></td></tr>`).join('');
 }
-function deviceModal(dev) {
-  state.modalCtx={deviceId:dev?.id||null};
+function deviceModal(dev, duplicate = false) {
+  state.modalCtx={deviceId: duplicate ? null : (dev?.id||null)};
   const sensitive = dev ? dev.export_sensitive!==0 : true;
+  const nameValue = duplicate ? `${dev?.name||'device'}-Copy` : (dev?.name||'');
   openModal(`
-  <div class="modal-head"><h3>${dev?t('dev.editTitle'):t('dev.new')}</h3><button class="icon-btn" data-act="close-modal">${icon('x',17)}</button></div>
+  <div class="modal-head"><h3>${duplicate?t('dev.duplicateTitle'):(dev?t('dev.editTitle'):t('dev.new'))}</h3><button class="icon-btn" data-act="close-modal">${icon('x',17)}</button></div>
   <form data-form="device" id="device-form"><div class="modal-body">
     <div class="form-section-title">${t('dev.general')}</div><div class="form-grid">
-      <div class="field"><label>${t('dev.name')} *</label><input name="name" value="${esc(dev?.name||'')}" required placeholder="RTR-CORE-01"></div>
+      <div class="field"><label>${t('dev.name')} *</label><input name="name" value="${esc(nameValue)}" required placeholder="RTR-CORE-01"></div>
       <div class="field"><label>${t('dev.group')}</label><select name="group_id"><option value="">${t('dev.noGroup')}</option>${state.groups.map(g=>`<option value="${g.id}" ${dev?.group_id==g.id?'selected':''}>${esc(g.name)}</option>`).join('')}</select></div>
       <div class="field"><label>${t('dev.host')} *</label><input name="host" value="${esc(dev?.host||'')}" required placeholder="172.20.20.1"></div>
       <div class="field"><label>${t('dev.port')} *</label><input name="port" type="number" value="${dev?.port||22}" required min="1" max="65535"></div>
@@ -755,6 +758,7 @@ document.addEventListener('click',async(e)=>{
     if(act==='open-password'){document.getElementById('user-dropdown')?.classList.remove('open');passwordModal();return;}
     if(act==='add-device'){deviceModal(null);return;}
     if(act==='edit-device'){deviceModal(state.devices.find(d=>d.id===id));return;}
+    if(act==='duplicate-device'){deviceModal(state.devices.find(d=>d.id===id),true);return;}
     if(act==='add-group'){groupModal(null);return;}
     if(act==='edit-group'){groupModal(state.groups.find(g=>g.id===id));return;}
     if(act==='add-user'){userModal();return;}

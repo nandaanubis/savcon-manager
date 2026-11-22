@@ -4,6 +4,13 @@ All notable changes to **Savcon Manager** are documented here.
 
 ---
 
+## [Unreleased]
+
+### ✨ Added
+- 📋 **Duplicate device** action — clone an existing device with the same credentials, port and type; the name gets a `-Copy` suffix and can be edited before saving.
+
+---
+
 ## [1.0.1] - 2026-11-23 — 🔒 Security Release
 
 ### 🔴 Fixed — Critical

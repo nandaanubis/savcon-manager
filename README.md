@@ -21,6 +21,7 @@
   - Cisco IOS / NX-OS, Dell FTOS, Alcatel OmniSwitch → `show running-config` / `show configuration snapshot`
 - 🔌 **SSH & Telnet** with custom ports, usernames and passwords
 - 🗂️ **Backup groups** — organize devices as *Mikrotik Core*, *Mikrotik Client*, etc.
+- 📋 **One-click duplicate** — clone an existing device (same credentials/port/type), just rename and change the IP
 - ♻️ **Configurable retention** (1–10 files per device, oldest files removed automatically)
 - ☁️ **Flexible storage** — Local, Email (SMTP), Google Drive (service account) and SFTP (or all at once)
 - 🖥️ **Modern Web UI** — dark glassmorphism design, responsive layout, smooth animations
